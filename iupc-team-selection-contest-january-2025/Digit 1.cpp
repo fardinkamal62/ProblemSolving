@@ -1,0 +1,23 @@
+/**
+*   author:   @fardinkamal62
+*   created:  10/01/2025 08:36
+**/
+
+#include "iostream"
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int tt;
+    cin >> tt;
+    while (tt--) {
+        int n;
+        cin >> n;
+        int mid = floor(n / 2);
+
+        if (n % 2 == 0) { cout << mid + 1 << "\n"; }
+        else cout << mid + 1 << "\n";
+    }
+    return 0;
+}
