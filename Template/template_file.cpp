@@ -18,10 +18,6 @@ int main() {
     
     while (tt--)
     {
-        ll n, m;
-        cin >> n >> m;
-
-        cout << (n ^ m) << endl;
     }
     
     return 0;
