@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and Run CP",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-Wall",
+                "-Wextra", 
+                "-Wshadow",
+                "-Wfloat-equal",
+                "-D_GLIBCXX_DEBUG",
+                "-D_GLIBCXX_DEBUG_PEDANTIC",
+                "-DLOCAL",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+                "&&",
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+                "<",
+                "${workspaceFolder}/input.txt",
+                ">",
+                "${workspaceFolder}/output.txt"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
