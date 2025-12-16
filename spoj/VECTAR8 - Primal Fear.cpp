@@ -21,6 +21,23 @@ vector<bool> sieveOfEratosthenes(long long n)
     return is_prime;
 }
 
+bool isFearfulPrime(int n, const vector<bool> &is_prime)
+{
+    string s = to_string(n);
+
+    if (s.find('0') != string::npos)
+        return false;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        int truncated = stoi(s.substr(i));
+        if (!is_prime[truncated])
+            return false;
+    }
+
+    return true;
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -28,11 +45,24 @@ int main()
 
     vector<bool> is_prime = sieveOfEratosthenes(1e6);
 
+    vector<int> fearful_count(1000001, 0);
+    for (int i = 1; i <= 1000000; i++)
+    {
+        fearful_count[i] = fearful_count[i - 1];
+        if (is_prime[i] && isFearfulPrime(i, is_prime))
+        {
+            fearful_count[i]++;
+        }
+    }
+
     int tt;
     cin >> tt;
 
     while (tt--)
     {
+        int n;
+        cin >> n;
+        cout << fearful_count[n] << endl;
     }
 
     return 0;
