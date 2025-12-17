@@ -20,7 +20,10 @@ int main()
     
     while (tt--)
     {
-        
+        int n, m, i, j;
+        cin >> n >> m >> i >> j;
+
+        cout << 1 << " " << 1 << " " << n << " " << m << endl;
     }
     
     return 0;
