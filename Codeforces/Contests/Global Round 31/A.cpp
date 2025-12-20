@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define endl "\n"
+
+void fastIO()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+}
+
+int main()
+{
+    fastIO();
+
+    ll tt;
+    cin >> tt;
+
+    while (tt--)
+    {
+        int l, a, b;
+        cin >> l >> a >> b;
+
+        int maximum = a;
+        int curr = (a + b) % l;
+        maximum = max(maximum, curr);
+
+        while (curr != a) 
+        {
+            curr = (curr + b) % l;
+            maximum = max(maximum, curr);
+        }
+
+        cout << maximum << endl;
+    }
+
+    return 0;
+}
