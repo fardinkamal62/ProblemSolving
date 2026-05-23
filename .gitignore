@@ -1,6 +1,8 @@
 .idea
 cmake-build-debug
 .vscode
+!.vscode/keybindings.json
+!.vscode/tasks.json
 *.dSYM
 
 test
