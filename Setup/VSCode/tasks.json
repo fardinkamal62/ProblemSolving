@@ -6,10 +6,10 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-std=c++17",
+                "-std=c++20",
                 "-O2",
                 "-Wall",
-                "-Wextra", 
+                "-Wextra",
                 "-Wshadow",
                 "-Wfloat-equal",
                 "-D_GLIBCXX_DEBUG",
@@ -35,7 +35,9 @@
                 "focus": false,
                 "panel": "shared"
             },
-            "problemMatcher": ["$gcc"]
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
